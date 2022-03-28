@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Event",
+"language": "GDScript",
+"path": "res://src/nodes/Event.gd"
+}, {
+"base": "Event",
+"class": "PlayerEvent",
+"language": "GDScript",
+"path": "res://src/nodes/PlayerEvent.gd"
+} ]
+_global_script_class_icons={
+"Event": "",
+"PlayerEvent": ""
+}
+
 [application]
 
 config/name="volta"

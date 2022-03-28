@@ -21,7 +21,7 @@ margin_right = 704.0
 margin_bottom = 322.0
 rect_min_size = Vector2( 128, 32 )
 size_flags_horizontal = 4
-text = "Play Game"
+text = "New Game"
 
 [node name="Button2" type="Button" parent="Menu"]
 margin_left = 576.0

@@ -8,7 +8,7 @@ func _ready() -> void:
 	if not Engine.editor_hint:
 		for i in range(1, get_child_count()):
 			var button := get_child(i)
-			button.connect("pressed", self, "_on_pressed", [i - 1])
+			button.connect("pressed", self, "_on_pressed", [i-1])
 
 func _on_pressed(index: int) -> void:
 	emit_signal("pressed", index)
@@ -22,7 +22,7 @@ func set_button_count(value: int) -> void:
 	if is_inside_tree():
 		var delta := button_count - get_child_count() + 1
 		if delta < 0:
-			for i in range(delta * -1):
+			for i in range(-delta):
 				get_child(get_child_count() - 1 - i).queue_free()
 		elif delta > 0:
 			for i in range(delta):
