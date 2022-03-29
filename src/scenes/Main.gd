@@ -3,7 +3,9 @@ extends Control
 enum Menu {NEW, CONTINUE, OPTIONS, EXIT}
 
 func _ready() -> void:
-	$Menu.connect("pressed", self, "_on_menu_pressed")
+	var menu := $Menu
+	menu.connect("pressed", self, "_on_menu_pressed")
+	menu.grab_focus_from(0)
 
 func _on_menu_pressed(index: int) -> void:
 	match index:

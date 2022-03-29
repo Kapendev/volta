@@ -13,6 +13,9 @@ func _ready() -> void:
 func _on_pressed(index: int) -> void:
 	emit_signal("pressed", index)
 
+func grab_focus_from(index: int) -> void:
+	get_child(index + 1).grab_focus()
+
 func set_button_count(value: int) -> void:
 	if value > 0:
 		button_count = value
