@@ -3,17 +3,33 @@ extends Event
 
 export var can_move_horizontally := true
 export var can_move_vertically := true
+var move_direction = Vector2()
 
 func _ready() -> void:
 	init_hitbox()
 
-func _physics_process(delta) -> void:
-	iupdate_hitbox()
+func _physics_process(_delta) -> void:
+	move_direction = Vector2.ZERO
 	if can_move_horizontally:
-		imove(LEFT)
-		imove(RIGHT)
+		if Input.is_action_pressed("ui_left"):
+			move_direction.x -= 1
+		if Input.is_action_pressed("ui_right"):
+			move_direction.x += 1
 	if can_move_vertically:
-		imove(UP)
-		imove(DOWN)
+		if Input.is_action_pressed("ui_up"):
+			move_direction.y -= 1
+		if Input.is_action_pressed("ui_down"):
+			move_direction.y += 1
+	move(move_direction)
+	move_hitbox(last_move_direction)
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		var body := hit()
+		if body:
+			print(body.name)
+	
 	if Input.is_action_just_pressed("ui_cancel"):
-		change_scene("Main")
+		if get_current_scene().name == "TestLevel":
+			change_scene("levels/TestLevel2")
+		else:
+			change_scene("Main")
