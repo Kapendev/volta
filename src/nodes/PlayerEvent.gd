@@ -3,7 +3,7 @@ extends Event
 
 export var can_move_horizontally := true
 export var can_move_vertically := true
-var move_direction = Vector2()
+var move_direction := Vector2()
 
 func _ready() -> void:
 	init_hitbox()

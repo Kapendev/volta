@@ -1,8 +1,9 @@
 extends Node
 
-const SCENE_DIR = "res://src/scenes/"
+const SCENE_DIR := "res://src/scenes/"
+const UI_RES := preload("res://src/scenes/ui/UI.tscn")
 
-var ui := UI.new()
+var ui = UI_RES.instance()
 
 func _ready():
 	add_child(ui)

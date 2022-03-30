@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Menu" type="VBoxContainer"]
+anchor_left = 0.3
+anchor_right = 0.7
+anchor_bottom = 1.0
+alignment = 1
