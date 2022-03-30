@@ -9,7 +9,10 @@ Godot version: 3.4.3
 
 ## Current state
 
-![state](.pictures/state.png)
+![state](.pictures/state1.png)
+
+![state](.pictures/state2.png)
+
 
 Nothing is stable lol.
 
