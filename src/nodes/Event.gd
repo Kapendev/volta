@@ -3,8 +3,6 @@ extends KinematicBody2D
 
 # NOTE: Think about the CollisionShape2D name used in init_hitbox
 
-const SCENE_DIR = "res://src/scenes/"
-
 var is_moving = false
 export var move_speed := 120
 var current_move_speed := move_speed
@@ -12,12 +10,6 @@ var last_move_direction = Vector2.RIGHT
 
 var hitbox: Area2D setget set_hitbox
 var hitbox_offset := 0
-
-func change_scene(scene: String) -> void:
-	get_tree().change_scene(SCENE_DIR + scene + ".tscn")
-
-func get_current_scene() -> Node:
-	return get_tree().get_current_scene()
 
 func move(direction: Vector2) -> void:
 	is_moving = direction != Vector2.ZERO

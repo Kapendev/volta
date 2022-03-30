@@ -29,7 +29,7 @@ func _physics_process(_delta) -> void:
 			print(body.name)
 	
 	if Input.is_action_just_pressed("ui_cancel"):
-		if get_current_scene().name == "TestLevel":
-			change_scene("levels/TestLevel2")
+		if Game.get_current_scene().name == "TestLevel":
+			Game.change_scene("levels/TestLevel2")
 		else:
-			change_scene("Main")
+			Game.change_scene("Main")

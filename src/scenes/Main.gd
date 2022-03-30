@@ -1,20 +1,20 @@
-extends Control
+extends Node
 
-enum Menu {NEW, CONTINUE, OPTIONS, EXIT}
+enum StartMenu {NEW, CONTINUE, OPTIONS, EXIT}
 
 func _ready() -> void:
-	var menu := $Menu
-	menu.connect("pressed", self, "_on_menu_pressed")
-	menu.grab_focus_from(0)
+	Game.ui.connect("menu_pressed", self, "_on_menu_pressed")
+	Game.ui.show_menu(["New Game", "Continue", "Options", "Exit"])
 
 func _on_menu_pressed(index: int) -> void:
 	match index:
-		Menu.NEW:
-			print("New")
-			get_tree().change_scene("res://src/scenes/levels/TestLevel.tscn")
-		Menu.CONTINUE:
-			print("Continue")
-		Menu.OPTIONS:
-			print("Options")
-		Menu.EXIT:
-			print("Exit")
+		StartMenu.NEW:
+			Game.change_scene("levels/TestLevel")
+		StartMenu.CONTINUE:
+			Game.change_scene("levels/TestLevel")
+		StartMenu.OPTIONS:
+			Game.change_scene("levels/TestLevel")
+		StartMenu.EXIT:
+			Game.change_scene("levels/TestLevel")
+	Game.ui.hide_menu()
+	Game.ui.disconnect("menu_pressed", self, "_on_menu_pressed")

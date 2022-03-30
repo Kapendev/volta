@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "PlayerEvent",
 "language": "GDScript",
 "path": "res://src/nodes/PlayerEvent.gd"
+}, {
+"base": "CanvasLayer",
+"class": "UI",
+"language": "GDScript",
+"path": "res://src/nodes/UI.gd"
 } ]
 _global_script_class_icons={
 "Event": "",
-"PlayerEvent": ""
+"PlayerEvent": "",
+"UI": ""
 }
 
 [application]
@@ -29,6 +35,10 @@ _global_script_class_icons={
 config/name="volta"
 run/main_scene="res://src/scenes/Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Game="*res://src/singletons/Game.gd"
 
 [display]
 
