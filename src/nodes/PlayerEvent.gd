@@ -26,10 +26,13 @@ func _physics_process(_delta) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		var body := hit()
 		if body:
-			print(body.name)
+			Game.ui.show_textbox("[wave]%s[/wave]" % body.name)
+		else:
+			Game.ui.hide_textbox()
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		if Game.get_current_scene().name == "TestLevel":
 			Game.change_scene("levels/TestLevel2")
 		else:
 			Game.change_scene("Main")
+		Game.ui.hide_textbox()

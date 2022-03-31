@@ -1,0 +1,28 @@
+[gd_scene format=2]
+
+[node name="UITextbox" type="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -148.0
+margin_top = -110.0
+margin_right = 149.0
+margin_bottom = -22.0
+
+[node name="Label" type="RichTextLabel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_right = -16.0
+bbcode_enabled = true
+bbcode_text = "[wave]
+Hello me dude.
+This is the textbox.
+Yes!
+Yes!!![/wave]"
+text = "
+Hello me dude.
+This is the textbox.
+Yes!
+Yes!!!"

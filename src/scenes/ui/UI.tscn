@@ -2,7 +2,5 @@
 
 [ext_resource path="res://src/scenes/ui/UI.gd" type="Script" id=1]
 
-[node name="UI" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="UI" type="CanvasLayer"]
 script = ExtResource( 1 )

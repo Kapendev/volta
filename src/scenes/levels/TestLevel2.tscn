@@ -16,7 +16,7 @@ __meta__ = {
 }
 
 [node name="PlayerEvent" type="KinematicBody2D" parent="."]
-position = Vector2( 189, 200 )
+position = Vector2( 189, 157 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="PlayerEvent"]
@@ -26,7 +26,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 3 )
 
 [node name="Event" type="KinematicBody2D" parent="."]
-position = Vector2( 512, 164 )
+position = Vector2( 512, 121 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Event"]
@@ -37,7 +37,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Event2" type="KinematicBody2D" parent="."]
-position = Vector2( 512, 234 )
+position = Vector2( 512, 191 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Event2"]

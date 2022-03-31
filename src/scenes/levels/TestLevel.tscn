@@ -29,7 +29,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 3 )
 
 [node name="Event" type="KinematicBody2D" parent="."]
-position = Vector2( 200, 264 )
+position = Vector2( 200, 168 )
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Event"]
@@ -40,7 +40,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Wall" type="StaticBody2D" parent="."]
-position = Vector2( 508, 200 )
+position = Vector2( 508, 168 )
 
 [node name="Sprite" type="Sprite" parent="Wall"]
 modulate = Color( 0, 0, 0, 1 )
