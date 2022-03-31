@@ -25,24 +25,24 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerEvent"]
 shape = SubResource( 3 )
 
-[node name="Event" type="KinematicBody2D" parent="."]
+[node name="Mominpappa" type="KinematicBody2D" parent="."]
 position = Vector2( 512, 121 )
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="Event"]
+[node name="Sprite" type="Sprite" parent="Mominpappa"]
 modulate = Color( 0.647059, 0.945098, 0.423529, 1 )
 texture = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Event"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mominpappa"]
 shape = SubResource( 1 )
 
-[node name="Event2" type="KinematicBody2D" parent="."]
+[node name="Snoofkin" type="KinematicBody2D" parent="."]
 position = Vector2( 512, 191 )
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="Event2"]
+[node name="Sprite" type="Sprite" parent="Snoofkin"]
 modulate = Color( 0.647059, 0.945098, 0.423529, 1 )
 texture = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Event2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Snoofkin"]
 shape = SubResource( 1 )

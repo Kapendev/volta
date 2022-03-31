@@ -28,15 +28,15 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerEvent"]
 shape = SubResource( 3 )
 
-[node name="Event" type="KinematicBody2D" parent="."]
+[node name="Bob" type="KinematicBody2D" parent="."]
 position = Vector2( 200, 168 )
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="Event"]
+[node name="Sprite" type="Sprite" parent="Bob"]
 modulate = Color( 0.647059, 0.945098, 0.423529, 1 )
 texture = ExtResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Event"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bob"]
 shape = SubResource( 1 )
 
 [node name="Wall" type="StaticBody2D" parent="."]
