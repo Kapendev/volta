@@ -24,19 +24,4 @@ func _physics_process(_delta) -> void:
 	move_hitbox(last_move_direction)
 	
 	if Input.is_action_just_pressed("ui_accept"):
-		var body := hit()
-		if body:
-			Game.ui.show_input_textbox([
-				"[shake]The name of this node is...[/shake]", \
-				"[wave]%s[/wave]" % body.name, \
-				"[rainbow]The end.[/rainbow]"
-			])
-		else:
-			Game.ui.hide_textbox()
-	
-	if Input.is_action_just_pressed("ui_cancel"):
-		if Game.get_current_scene().name == "TestLevel":
-			Game.change_scene("levels/TestLevel2")
-		else:
-			Game.change_scene("Main")
-		Game.ui.hide_textbox()
+		hit()

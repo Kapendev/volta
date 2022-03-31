@@ -47,6 +47,9 @@ func set_hitbox(value: Area2D) -> void:
 func move_hitbox(direction: Vector2) -> void:
 	hitbox.position = direction * hitbox_offset
 
+func react() -> void:
+	print("%s: Reacting." % name)
+
 func hit() -> KinematicBody2D:
 	var result: KinematicBody2D
 	var smallest_distance := INF
@@ -56,4 +59,6 @@ func hit() -> KinematicBody2D:
 			if distance < smallest_distance:
 				smallest_distance = distance
 				result = body
+	if result:
+		result.react()
 	return result

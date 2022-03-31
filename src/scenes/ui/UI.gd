@@ -56,11 +56,12 @@ func show_textbox(text: String) -> void:
 	get_textbox_label().set_bbcode("\n" + text)
 
 func show_input_textbox(text_array: PoolStringArray) -> void:
-	Game.pause()
-	set_process_input(true)
-	show_textbox(text_array[0])
-	state = States.TEXTBOX
-	state_args = text_array
+	if text_array:
+		Game.pause()
+		set_process_input(true)
+		show_textbox(text_array[0])
+		state = States.TEXTBOX
+		state_args = text_array
 
 func append_textbox(text: String) -> void:
 	get_textbox_label().append_bbcode(text)
