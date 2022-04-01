@@ -33,7 +33,7 @@ shape = SubResource( 3 )
 modulate = Color( 0.705882, 0.941176, 0.588235, 1 )
 position = Vector2( 461, 125 )
 script = ExtResource( 4 )
-text_array = PoolStringArray( "[wave]My name is Green Mominpappa." )
+text_array = PoolStringArray( "[fadein]My name is Green Mominpappa." )
 
 [node name="Sprite" type="Sprite" parent="Mominpappa"]
 texture = ExtResource( 1 )

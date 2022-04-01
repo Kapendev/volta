@@ -1,4 +1,9 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/resources/FadeInEffect.gd" type="Script" id=1]
+
+[sub_resource type="RichTextEffect" id=1]
+script = ExtResource( 1 )
 
 [node name="UITextbox" type="VBoxContainer"]
 anchor_left = 0.3
@@ -17,15 +22,16 @@ rect_min_size = Vector2( 0, 90 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 16.0
+margin_top = 14.0
 margin_right = -16.0
+rect_clip_content = false
 bbcode_enabled = true
-bbcode_text = "[wave]
-Hello me dude.
-This is the textbox.
-Yes!
-Yes!!![/wave]"
-text = "
-Hello me dude.
+bbcode_text = "[wave]Hello me dude.
 This is the textbox.
 Yes!
 Yes!!!"
+text = "Hello me dude.
+This is the textbox.
+Yes!
+Yes!!!"
+custom_effects = [ SubResource( 1 ) ]

@@ -4,7 +4,7 @@ extends KinematicBody2D
 # NOTE: Think about the CollisionShape2D name used in init_hitbox
 
 var is_moving := false
-export var move_speed := 120
+export var move_speed := 160
 var current_move_speed := move_speed
 var last_move_direction = Vector2.RIGHT
 

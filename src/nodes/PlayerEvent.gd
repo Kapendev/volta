@@ -8,7 +8,7 @@ var move_direction := Vector2()
 func _ready() -> void:
 	init_hitbox()
 
-func _physics_process(_delta) -> void:
+func _physics_process(_delta: float) -> void:
 	move_direction = Vector2.ZERO
 	if can_move_horizontally:
 		if Input.is_action_pressed("ui_left"):
