@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="UIRect" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "\"Transition screen\""
+align = 1
+valign = 1

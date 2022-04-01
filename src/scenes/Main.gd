@@ -7,6 +7,7 @@ func _ready() -> void:
 	Game.show_menu(["New Game", "Continue", "Options", "Exit"], BoxContainer.ALIGN_END)
 
 func _on_menu_pressed(index: int) -> void:
+	Game.show_rect(0.5)
 	match index:
 		StartMenu.NEW:
 			Game.change_scene("levels/TestLevel")

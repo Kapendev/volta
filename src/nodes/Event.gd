@@ -6,7 +6,7 @@ extends KinematicBody2D
 var is_moving := false
 export var move_speed := 160
 var current_move_speed := move_speed
-var last_move_direction = Vector2.RIGHT
+var last_move_direction := Vector2.RIGHT
 
 var hitbox: Area2D setget set_hitbox
 var hitbox_offset := 0

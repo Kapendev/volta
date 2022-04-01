@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/nodes/Event.gd"
 }, {
-"base": "RichTextEffect",
-"class": "FadeInEffect",
-"language": "GDScript",
-"path": "res://src/resources/FadeInEffect.gd"
-}, {
 "base": "Event",
 "class": "PlayerEvent",
 "language": "GDScript",
@@ -36,7 +31,6 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Event": "",
-"FadeInEffect": "",
 "PlayerEvent": "",
 "SceneEvent": "",
 "TextEvent": ""

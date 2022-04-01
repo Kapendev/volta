@@ -44,7 +44,7 @@ shape = SubResource( 3 )
 modulate = Color( 1, 0.462745, 0.462745, 1 )
 position = Vector2( 171, 109 )
 script = ExtResource( 4 )
-text_array = PoolStringArray( "Hello world.", "This is me.", "The Textbox event.", "Nice to meet you.", "Thanks for clicking me.", "I love you.", "Bye." )
+text_array = PoolStringArray( "Hello world.", "This is a big BIG line of text that is used to check how fast the text will appear on the screen.", "The Textbox event.", "Nice to meet you.", "Thanks for clicking me.", "I love you.", "Bye." )
 
 [node name="Sprite" type="Sprite" parent="TextEvent"]
 texture = ExtResource( 1 )

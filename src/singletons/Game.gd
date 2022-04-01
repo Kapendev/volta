@@ -12,15 +12,19 @@ var count := 0
 var state := 0
 var state_args: PoolStringArray
 
+var textbox_speed := 32
+
 var menu: VBoxContainer
 var textbox: VBoxContainer
 var textbox_label: RichTextLabel
+var rect: ColorRect
 
 func _ready() -> void:
 	add_child(load("res://src/scenes/ui/UI.tscn").instance())
 	menu = get_node("UI/UIMenu")
 	textbox = get_node("UI/UITextbox")
 	textbox_label = get_node("UI/UITextbox/Panel/Label")
+	rect = get_node("UI/UIRect")
 	set_state(States.NOTHING)
 	set_pause_mode(Node.PAUSE_MODE_PROCESS)
 	hide_all()
@@ -28,16 +32,32 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	match state:
 		States.TEXTBOX:
-			_state_textbox(event)
+			_state_input_textbox(event)
 
-func _state_textbox(event: InputEvent) -> void:
+func _process(delta: float) -> void:
+	match state:
+		States.TEXTBOX:
+			_state_process_textbox(delta)
+
+func _state_input_textbox(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
-		if count < len(state_args):
-			textbox_label.set_bbcode(state_args[count])
-			count += 1
+		if textbox_label.percent_visible == 1.0:
+			if count < len(state_args):
+				textbox_label.set_bbcode(state_args[count])
+				textbox_label.percent_visible = 0.0
+				count += 1
+			else:
+				hide_textbox()
+				set_state(States.NOTHING)
 		else:
-			hide_textbox()
-			set_state(States.NOTHING)
+			textbox_label.percent_visible = 1.0
+
+func _state_process_textbox(delta: float) -> void:
+	if textbox_label.percent_visible < 1.0:
+		textbox_label.percent_visible += \
+		1.0 / textbox_label.get_total_character_count() * textbox_speed * delta
+	elif textbox_label.percent_visible > 1.0:
+		textbox_label.percent_visible = 1.0
 
 func _on_menu_button_pressed(index: int) -> void:
 	unpause()
@@ -67,6 +87,7 @@ func set_state(new_state: int, args := PoolStringArray()) -> void:
 	else:
 		unpause()
 	set_process_input(state != States.NOTHING)
+	set_process(is_processing_input())
 
 func show_menu(args: PoolStringArray, alignment := BoxContainer.ALIGN_CENTER) -> void:
 	if args:
@@ -92,6 +113,7 @@ func show_textbox(args: PoolStringArray, alignment := BoxContainer.ALIGN_END) ->
 		textbox.show()
 		textbox.set_alignment(alignment)
 		textbox_label.set_bbcode(state_args[count])
+		textbox_label.percent_visible = 0.0
 		count += 1
 
 func append_textbox(text: String) -> void:
@@ -101,6 +123,18 @@ func hide_textbox() -> void:
 	emit_signal("textbox_hidden")
 	textbox.hide()
 
+func show_rect(time := 0.0) -> void:
+	rect.show()
+	if time > 0.0:
+		pause()
+		yield(get_tree().create_timer(time), "timeout")
+		unpause()
+		rect.hide()
+
+func hide_rect() -> void:
+	rect.hide()
+
 func hide_all() -> void:
 	hide_menu()
 	hide_textbox()
+	hide_rect()
