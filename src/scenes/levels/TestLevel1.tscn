@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://src/nodes/PlayerEvent.gd" type="Script" id=2]
-[ext_resource path="res://src/nodes/SceneEvent.gd" type="Script" id=3]
-[ext_resource path="res://src/nodes/TextEvent.gd" type="Script" id=4]
+[ext_resource path="res://src/nodes/TextEvent.gd" type="Script" id=1]
+[ext_resource path="res://src/nodes/SceneEvent.gd" type="Script" id=2]
+[ext_resource path="res://src/nodes/PlayerEvent.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 96 )
+extents = Vector2( 32, 128 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 32, 32 )
@@ -14,64 +14,65 @@ extents = Vector2( 32, 32 )
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
 
-[node name="TestLevel" type="Node2D"]
+[node name="TestLevel1" type="Node2D"]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Wall" type="StaticBody2D" parent="."]
-position = Vector2( 524, 87 )
+position = Vector2( 142, 159 )
 
 [node name="Sprite" type="Sprite" parent="Wall"]
 modulate = Color( 0, 0, 0, 1 )
-scale = Vector2( 1, 3 )
-texture = ExtResource( 1 )
+scale = Vector2( 1, 4 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
 shape = SubResource( 2 )
 
 [node name="PlayerEvent" type="KinematicBody2D" parent="."]
-position = Vector2( 371, 221 )
-script = ExtResource( 2 )
+position = Vector2( 400, 102 )
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="PlayerEvent"]
-texture = ExtResource( 1 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerEvent"]
 shape = SubResource( 3 )
 
 [node name="TextEvent" type="KinematicBody2D" parent="."]
 modulate = Color( 1, 0.462745, 0.462745, 1 )
-position = Vector2( 171, 109 )
-script = ExtResource( 4 )
-text_array = PoolStringArray( "Hello world.", "This is a big BIG line of text that is used to check how fast the text will appear on the screen.", "The Textbox event.", "Nice to meet you.", "Thanks for clicking me.", "I love you.", "Bye." )
+position = Vector2( 231, 215 )
+script = ExtResource( 1 )
+text_array = PoolStringArray( "Hello world.", "[wave]This is a big BIG line of text that is used to check how fast the text will appear on the screen.", "Thanks for clicking me.", "[shake]I love you.", "Bye." )
 
 [node name="Sprite" type="Sprite" parent="TextEvent"]
-texture = ExtResource( 1 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextEvent"]
 shape = SubResource( 1 )
 
 [node name="TextEvent2" type="KinematicBody2D" parent="."]
 modulate = Color( 0.705882, 0.941176, 0.588235, 1 )
-position = Vector2( 171, 221 )
-script = ExtResource( 4 )
+position = Vector2( 231, 102 )
+script = ExtResource( 1 )
 text_array = PoolStringArray( "[shake]The name of this node is...", "[wave]Bob.", "[rainbow]The end." )
 
 [node name="Sprite" type="Sprite" parent="TextEvent2"]
-texture = ExtResource( 1 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TextEvent2"]
 shape = SubResource( 1 )
 
 [node name="SceneEvent" type="KinematicBody2D" parent="."]
 modulate = Color( 0.976471, 0.980392, 0.462745, 1 )
-position = Vector2( 609, 151 )
-script = ExtResource( 3 )
+position = Vector2( 574, 215 )
+script = ExtResource( 2 )
 scene = "levels/TestLevel2"
+target_position = Vector2( 215, 125 )
 
 [node name="Sprite" type="Sprite" parent="SceneEvent"]
-texture = ExtResource( 1 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneEvent"]
 shape = SubResource( 1 )

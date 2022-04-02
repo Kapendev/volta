@@ -2,8 +2,9 @@ class_name SceneEvent
 extends Event
 
 export var scene := ""
+export var target_position := Vector2()
 
-func react() -> void:
+func react(body: KinematicBody2D) -> void:
 	if scene:
-		Game.show_rect(0.5)
 		Game.change_scene(scene)
+		body.set_position(target_position)

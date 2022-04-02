@@ -3,5 +3,5 @@ extends Event
 
 export var text_array := PoolStringArray()
 
-func react() -> void:
-	Game.show_textbox(text_array)
+func react(_body: KinematicBody2D) -> void:
+	UI.show_textbox(text_array)

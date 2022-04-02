@@ -3,18 +3,20 @@ extends Control
 enum StartMenu {NEW, CONTINUE, OPTIONS, EXIT}
 
 func _ready() -> void:
-	Game.connect("menu_pressed", self, "_on_menu_pressed")
-	Game.show_menu(["New Game", "Continue", "Options", "Exit"], BoxContainer.ALIGN_END)
+	Persistent.empty()
+	var err := UI.connect("menu_pressed", self, "_on_menu_pressed")
+	if err:
+		Game.print_error(self, "_ready", err)
+	UI.show_menu(["New Game", "Continue", "Options", "Exit"], BoxContainer.ALIGN_END)
 
 func _on_menu_pressed(index: int) -> void:
-	Game.show_rect(0.5)
 	match index:
 		StartMenu.NEW:
-			Game.change_scene("levels/TestLevel")
+			Game.change_scene("levels/TestLevel1")
 		StartMenu.CONTINUE:
-			Game.change_scene("levels/TestLevel")
+			Game.change_scene("levels/TestLevel1")
 		StartMenu.OPTIONS:
-			Game.change_scene("levels/TestLevel")
+			Game.change_scene("levels/TestLevel1")
 		StartMenu.EXIT:
-			Game.change_scene("levels/TestLevel")
-	Game.disconnect("menu_pressed", self, "_on_menu_pressed")
+			Game.change_scene("levels/TestLevel1")
+	UI.disconnect("menu_pressed", self, "_on_menu_pressed")

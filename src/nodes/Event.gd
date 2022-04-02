@@ -14,12 +14,12 @@ var hitbox_offset := 0
 func move(direction: Vector2) -> void:
 	is_moving = direction != Vector2.ZERO
 	if is_moving:
-		move_and_slide(direction.normalized() * current_move_speed)
+		var _vector := move_and_slide(direction.normalized() * current_move_speed)
 		last_move_direction = direction
 
 func apply_accde(rate: int) -> void:
 	if is_moving:
-		current_move_speed = min(current_move_speed + rate, move_speed)
+		current_move_speed = int(min(current_move_speed + rate, move_speed))
 	elif current_move_speed > 0:
 		current_move_speed -= rate * 2
 		if current_move_speed < 0:
@@ -47,8 +47,8 @@ func set_hitbox(value: Area2D) -> void:
 func move_hitbox(direction: Vector2) -> void:
 	hitbox.position = direction * hitbox_offset
 
-func react() -> void:
-	print("%s: Reacting." % name)
+func react(body: KinematicBody2D) -> void:
+	print("%s -> %s" % body.name, name)
 
 func hit() -> KinematicBody2D:
 	var result: KinematicBody2D
@@ -60,5 +60,5 @@ func hit() -> KinematicBody2D:
 				smallest_distance = distance
 				result = body
 	if result:
-		result.react()
+		result.react(self)
 	return result

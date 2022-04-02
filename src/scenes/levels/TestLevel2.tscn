@@ -64,3 +64,16 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneEvent"]
 shape = SubResource( 4 )
+
+[node name="SceneEvent2" type="KinematicBody2D" parent="."]
+modulate = Color( 0.976471, 0.980392, 0.462745, 1 )
+position = Vector2( 143, 125 )
+script = ExtResource( 3 )
+scene = "levels/TestLevel1"
+target_position = Vector2( 502, 215 )
+
+[node name="Sprite" type="Sprite" parent="SceneEvent2"]
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneEvent2"]
+shape = SubResource( 4 )

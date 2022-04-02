@@ -6,6 +6,7 @@ export var can_move_vertically := true
 var move_direction := Vector2()
 
 func _ready() -> void:
+	Persistent.append(self)
 	init_hitbox()
 
 func _physics_process(_delta: float) -> void:
@@ -24,4 +25,4 @@ func _physics_process(_delta: float) -> void:
 	move_hitbox(last_move_direction)
 	
 	if Input.is_action_just_pressed("ui_accept"):
-		hit()
+		var _body := hit()
