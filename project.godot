@@ -25,6 +25,11 @@ _global_script_classes=[ {
 "path": "res://src/nodes/SceneEvent.gd"
 }, {
 "base": "Event",
+"class": "TeleportEvent",
+"language": "GDScript",
+"path": "res://src/nodes/TeleportEvent.gd"
+}, {
+"base": "Event",
 "class": "TextEvent",
 "language": "GDScript",
 "path": "res://src/nodes/TextEvent.gd"
@@ -33,6 +38,7 @@ _global_script_class_icons={
 "Event": "",
 "PlayerEvent": "",
 "SceneEvent": "",
+"TeleportEvent": "",
 "TextEvent": ""
 }
 
