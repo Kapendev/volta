@@ -1,0 +1,5 @@
+@en
+[wave]My name is Green Mominpappa.
+
+@gr
+[wave]Με λένε Green Mominpappa.

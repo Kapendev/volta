@@ -1,7 +1,9 @@
 class_name TextEvent
 extends Event
 
-export var text_array := PoolStringArray()
+export(String, FILE, "*.txt") var path := ""
 
 func react(_body: KinematicBody2D) -> void:
-	UI.show_textbox(text_array)
+	var data := TextReader.read(path)
+	if data:
+		UI.show_textbox(data)

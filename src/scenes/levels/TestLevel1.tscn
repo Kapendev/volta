@@ -44,7 +44,7 @@ shape = SubResource( 3 )
 modulate = Color( 1, 0.462745, 0.462745, 1 )
 position = Vector2( 231, 215 )
 script = ExtResource( 1 )
-text_array = PoolStringArray( "Hello world.", "[wave]This is a big BIG line of text that is used to check how fast the text will appear on the screen.", "Thanks for clicking me.", "[shake]I love you.", "Bye." )
+path = "res://txt/hello.txt"
 
 [node name="Sprite" type="Sprite" parent="TextEvent"]
 texture = ExtResource( 4 )
@@ -56,7 +56,7 @@ shape = SubResource( 1 )
 modulate = Color( 0.705882, 0.941176, 0.588235, 1 )
 position = Vector2( 231, 102 )
 script = ExtResource( 1 )
-text_array = PoolStringArray( "[shake]The name of this node is...", "[wave]Bob.", "[rainbow]The end." )
+path = "res://txt/bob.txt"
 
 [node name="Sprite" type="Sprite" parent="TextEvent2"]
 texture = ExtResource( 4 )

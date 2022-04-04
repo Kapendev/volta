@@ -85,7 +85,7 @@ func show_menu(args: PoolStringArray, alignment := BoxContainer.ALIGN_CENTER) ->
 		var button := UIBUTTON_RES.instance()
 		var err := button.connect("pressed", self, "_on_menu_button_pressed", [i])
 		if err:
-			Game.print_error(self, "show_menu", err)
+			Game.print_error(self, "button.connect", err)
 		button.set_text(args[i])
 		menu.add_child(button)
 		menu.set_alignment(alignment)
@@ -103,4 +103,4 @@ func show_textbox(args: PoolStringArray, alignment := BoxContainer.ALIGN_END) ->
 func append_textbox(text: String) -> void:
 	var err := textbox_label.append_bbcode(text)
 	if err:
-		Game.print_error(self, "append_textbox", err)
+		Game.print_error(self, "textbox_label.append_bbcode", err)

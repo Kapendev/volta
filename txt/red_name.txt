@@ -1,0 +1,5 @@
+@en
+[wave]My name is Red Snoofkin.
+
+@gr
+[wave]Με λένε Red Snoofkin.

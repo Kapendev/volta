@@ -1,0 +1,9 @@
+@en
+[shake]The name of this node is...
+[wave]Bob.
+[rainbow]The end.
+
+@gr
+[shake]Το όνομα αυτού του κόμβου είναι...
+[wave]Μπόμπ.
+[rainbow]Τέλος.

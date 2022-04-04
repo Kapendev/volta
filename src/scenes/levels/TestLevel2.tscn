@@ -33,7 +33,7 @@ shape = SubResource( 3 )
 modulate = Color( 0.705882, 0.941176, 0.588235, 1 )
 position = Vector2( 461, 125 )
 script = ExtResource( 4 )
-text_array = PoolStringArray( "[wave]My name is Green Mominpappa." )
+path = "res://txt/green_name.txt"
 
 [node name="Sprite" type="Sprite" parent="Mominpappa"]
 texture = ExtResource( 1 )
@@ -45,7 +45,7 @@ shape = SubResource( 1 )
 modulate = Color( 1, 0.462745, 0.462745, 1 )
 position = Vector2( 461, 195 )
 script = ExtResource( 4 )
-text_array = PoolStringArray( "[wave]My name is Red Snoofkin." )
+path = "res://txt/red_name.txt"
 
 [node name="Sprite" type="Sprite" parent="Snoofkin"]
 texture = ExtResource( 1 )
