@@ -10,10 +10,7 @@ func is_language_line(line: String) -> bool:
 	return line[0] == LANGUAGE_CHAR
 
 func is_current_language_line(line: String) -> bool:
-	if line[0] == LANGUAGE_CHAR \
-	and line.ends_with(Game.current_language):
-		return true
-	return false
+	return is_language_line(line) and line.ends_with(Game.current_language)
 
 func read(path: String) -> PoolStringArray:
 	var result := PoolStringArray()
