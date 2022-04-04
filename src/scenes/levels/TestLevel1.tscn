@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/nodes/TextEvent.gd" type="Script" id=1]
 [ext_resource path="res://src/nodes/SceneEvent.gd" type="Script" id=2]
 [ext_resource path="res://src/nodes/PlayerEvent.gd" type="Script" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://src/nodes/ActorSprite.gd" type="Script" id=5]
+[ext_resource path="res://assets/sprites/actors/ranger_m.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32, 128 )
@@ -34,8 +36,15 @@ shape = SubResource( 2 )
 position = Vector2( 400, 102 )
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="PlayerEvent"]
-texture = ExtResource( 4 )
+[node name="ActorSprite" type="Sprite" parent="PlayerEvent"]
+scale = Vector2( 1.8, 1.8 )
+texture = ExtResource( 6 )
+hframes = 3
+vframes = 4
+frame = 6
+script = ExtResource( 5 )
+is_playing = true
+current_animation = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerEvent"]
 shape = SubResource( 3 )
