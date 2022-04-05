@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mage_m.png-85eb742c8bdd2e219b4d7f34df9058c3.stex"
+path="res://.import/actor1.png-3927ab6065afb26bf5f99d6f7f290320.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/actors/mage_m.png"
-dest_files=[ "res://.import/mage_m.png-85eb742c8bdd2e219b4d7f34df9058c3.stex" ]
+source_file="res://assets/sprites/isaiah658_pixelpack2/actors/actor1.png"
+dest_files=[ "res://.import/actor1.png-3927ab6065afb26bf5f99d6f7f290320.stex" ]
 
 [params]
 

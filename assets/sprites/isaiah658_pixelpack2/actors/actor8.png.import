@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ninja_f.png-fc50e567eb6c3080e7de6ba2846e2465.stex"
+path="res://.import/actor8.png-61fd396bb40048152ee0512b22ec2b53.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/actors/ninja_f.png"
-dest_files=[ "res://.import/ninja_f.png-fc50e567eb6c3080e7de6ba2846e2465.stex" ]
+source_file="res://assets/sprites/isaiah658_pixelpack2/actors/actor8.png"
+dest_files=[ "res://.import/actor8.png-61fd396bb40048152ee0512b22ec2b53.stex" ]
 
 [params]
 

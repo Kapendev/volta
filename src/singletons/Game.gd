@@ -5,6 +5,11 @@ const LANGUAGES := ["en", "gr"]
 
 var current_language := "en"
 
+func _input(_event: InputEvent) -> void:
+	# this func is for testing
+	if Input.is_action_just_pressed("ui_cancel"):
+		OS.window_fullscreen = not OS.window_fullscreen
+
 func print_error(node: Node, func_name: String, err: int) -> void:
 	printerr("%s: %s -> error = %d" % [node.name, func_name, err])
 

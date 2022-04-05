@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/warrior_m.png-46a22216de38fbe8b9e3966bba5ee433.stex"
+path="res://.import/actor7.png-1876fec95da599a1fd422139915a069b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/actors/warrior_m.png"
-dest_files=[ "res://.import/warrior_m.png-46a22216de38fbe8b9e3966bba5ee433.stex" ]
+source_file="res://assets/sprites/isaiah658_pixelpack2/actors/actor7.png"
+dest_files=[ "res://.import/actor7.png-1876fec95da599a1fd422139915a069b.stex" ]
 
 [params]
 
