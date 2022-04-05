@@ -29,8 +29,7 @@ hframes = 4
 vframes = 4
 script = ExtResource( 5 )
 current_animation = "walk_down"
-animation_info = "idle,3
-walk_down,0,1,2,3"
+path = "res://txt/animations/actor_anim.txt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerEvent"]
 shape = SubResource( 3 )
@@ -39,7 +38,7 @@ shape = SubResource( 3 )
 modulate = Color( 1, 0.462745, 0.462745, 1 )
 position = Vector2( 145, 185 )
 script = ExtResource( 1 )
-path = "res://txt/hello.txt"
+path = "res://txt/dialogues/hello.txt"
 
 [node name="Sprite" type="Sprite" parent="TextEvent"]
 texture = ExtResource( 4 )
@@ -51,7 +50,7 @@ shape = SubResource( 1 )
 modulate = Color( 0.705882, 0.941176, 0.588235, 1 )
 position = Vector2( 145, 72 )
 script = ExtResource( 1 )
-path = "res://txt/bob.txt"
+path = "res://txt/dialogues/bob.txt"
 
 [node name="Sprite" type="Sprite" parent="TextEvent2"]
 texture = ExtResource( 4 )
