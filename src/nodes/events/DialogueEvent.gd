@@ -1,4 +1,4 @@
-class_name TextEvent
+class_name DialogueEvent
 extends Event
 
 export(String, FILE, "*.txt") var path := ""

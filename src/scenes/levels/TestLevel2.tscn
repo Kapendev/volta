@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://src/nodes/PlayerEvent.gd" type="Script" id=2]
-[ext_resource path="res://src/nodes/SceneEvent.gd" type="Script" id=3]
-[ext_resource path="res://src/nodes/TextEvent.gd" type="Script" id=4]
-[ext_resource path="res://src/nodes/ActorSprite.gd" type="Script" id=5]
+[ext_resource path="res://src/nodes/events/PlayerEvent.gd" type="Script" id=2]
+[ext_resource path="res://src/nodes/events/SceneEvent.gd" type="Script" id=3]
+[ext_resource path="res://src/nodes/events/DialogueEvent.gd" type="Script" id=4]
+[ext_resource path="res://src/nodes/AnimationSprite.gd" type="Script" id=5]
 [ext_resource path="res://assets/sprites/isaiah658_pixelpack2/actors/actor2.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -79,6 +79,7 @@ position = Vector2( 143, 125 )
 script = ExtResource( 3 )
 scene = "levels/TestLevel1"
 target_position = Vector2( 427, 185 )
+target_direction = Vector2( -1, 0 )
 
 [node name="Sprite" type="Sprite" parent="SceneEvent2"]
 texture = ExtResource( 1 )

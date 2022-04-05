@@ -9,43 +9,43 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Sprite",
-"class": "ActorSprite",
+"base": "Reference",
+"class": "AnimationSprite",
 "language": "GDScript",
-"path": "res://src/nodes/ActorSprite.gd"
+"path": "res://src/nodes/AnimationSprite.gd"
+}, {
+"base": "Event",
+"class": "DialogueEvent",
+"language": "GDScript",
+"path": "res://src/nodes/events/DialogueEvent.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Event",
 "language": "GDScript",
-"path": "res://src/nodes/Event.gd"
+"path": "res://src/nodes/events/Event.gd"
 }, {
 "base": "Event",
 "class": "PlayerEvent",
 "language": "GDScript",
-"path": "res://src/nodes/PlayerEvent.gd"
+"path": "res://src/nodes/events/PlayerEvent.gd"
 }, {
 "base": "Event",
 "class": "SceneEvent",
 "language": "GDScript",
-"path": "res://src/nodes/SceneEvent.gd"
+"path": "res://src/nodes/events/SceneEvent.gd"
 }, {
 "base": "Event",
 "class": "TeleportEvent",
 "language": "GDScript",
-"path": "res://src/nodes/TeleportEvent.gd"
-}, {
-"base": "Event",
-"class": "TextEvent",
-"language": "GDScript",
-"path": "res://src/nodes/TextEvent.gd"
+"path": "res://src/nodes/events/TeleportEvent.gd"
 } ]
 _global_script_class_icons={
-"ActorSprite": "",
+"AnimationSprite": "",
+"DialogueEvent": "",
 "Event": "",
 "PlayerEvent": "",
 "SceneEvent": "",
-"TeleportEvent": "",
-"TextEvent": ""
+"TeleportEvent": ""
 }
 
 [application]
