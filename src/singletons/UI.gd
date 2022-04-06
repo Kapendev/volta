@@ -86,11 +86,12 @@ func show_menu(args: PoolStringArray, alignment := BoxContainer.ALIGN_CENTER) ->
 		var err := button.connect("pressed", self, "_on_menu_button_pressed", [i])
 		if err:
 			Game.print_error(self, "button.connect", err)
-		button.set_text(args[i])
-		menu.add_child(button)
-		menu.set_alignment(alignment)
-		if i == 0:
-			button.grab_focus()
+		else:
+			button.set_text(args[i])
+			menu.add_child(button)
+			menu.set_alignment(alignment)
+			if i == 0:
+				button.grab_focus()
 
 func show_textbox(args: PoolStringArray, alignment := BoxContainer.ALIGN_END) -> void:
 	set_state(States.TEXTBOX, args)

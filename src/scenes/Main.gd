@@ -7,7 +7,8 @@ func _ready() -> void:
 	var err := UI.connect("menu_pressed", self, "_on_menu_pressed")
 	if err:
 		Game.print_error(self, "UI.connect", err)
-	UI.show_menu(["New Game", "Continue", "Options", "Exit"], BoxContainer.ALIGN_END)
+	else:
+		UI.show_menu(["New Game", "Continue", "Options", "Exit"], BoxContainer.ALIGN_END)
 
 func _on_menu_pressed(index: int) -> void:
 	match index:

@@ -48,7 +48,7 @@ func move_hitbox(direction: Vector2) -> void:
 	hitbox.position = direction * hitbox_offset
 
 func react(body: KinematicBody2D) -> void:
-	print("%s -> %s" % body.name, name)
+	print("%s -> %s" % [body.name, name])
 
 func hit() -> KinematicBody2D:
 	var result: KinematicBody2D
