@@ -4,7 +4,7 @@
 [ext_resource path="res://src/nodes/events/PlayerEvent.gd" type="Script" id=2]
 [ext_resource path="res://src/nodes/events/SceneEvent.gd" type="Script" id=3]
 [ext_resource path="res://src/nodes/events/DialogueEvent.gd" type="Script" id=4]
-[ext_resource path="res://src/nodes/AnimationSprite.gd" type="Script" id=5]
+[ext_resource path="res://src/nodes/EventSprite.gd" type="Script" id=5]
 [ext_resource path="res://assets/sprites/isaiah658_pixelpack2/actors/actor2.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=3]

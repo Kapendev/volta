@@ -1,8 +1,6 @@
 class_name EventMover
 extends Node
 
-# TODO: fix speed bug
-
 signal arrived
 signal returned
 
@@ -18,7 +16,7 @@ var timer := 0.0
 var event: Event
 
 func _ready() -> void:
-	event = get_child(0)
+	event = get_parent()
 	if event and positions:
 		set_physics_process(true)
 		event.set_position(positions[current_position])
@@ -35,7 +33,9 @@ func _physics_process(delta: float) -> void:
 				next_position()
 		else:
 			event.move(positions[current_position] - event.position)
-			is_waiting = event.get_position().distance_to(positions[current_position]) / event.move_speed < 0.01
+			if event.get_position().distance_to(positions[current_position]) < event.current_move_speed * delta:
+				is_waiting = true
+				event.set_position(positions[current_position])
 
 func next_position() -> void:
 	if is_going_back:
