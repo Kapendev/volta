@@ -1,14 +1,20 @@
 class_name EventMover
 extends Node
 
+# TODO: fix speed bug
+
 signal arrived
 signal returned
 
 export var is_moving := true
 export var is_one_shot := false
+export var wait_time := 0.5
 export var positions := PoolVector2Array()
+
 var is_going_back := false
+var is_waiting := false
 var current_position := 0
+var timer := 0.0
 var event: Event
 
 func _ready() -> void:
@@ -19,11 +25,17 @@ func _ready() -> void:
 	else:
 		set_physics_process(false)
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if is_moving:
-		event.move(positions[current_position] - event.position)
-		if event.get_position().distance_to(positions[current_position]) / event.move_speed < 0.01:
-			next_position()
+		if is_waiting:
+			timer += delta
+			if timer >= wait_time:
+				is_waiting = false
+				timer = 0.0
+				next_position()
+		else:
+			event.move(positions[current_position] - event.position)
+			is_waiting = event.get_position().distance_to(positions[current_position]) / event.move_speed < 0.01
 
 func next_position() -> void:
 	if is_going_back:
