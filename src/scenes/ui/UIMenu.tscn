@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/scenes/ui/UIMenu.gd" type="Script" id=1]
 
 [node name="UIMenu" type="VBoxContainer"]
 anchor_left = 0.3
@@ -6,3 +8,4 @@ anchor_top = 0.05
 anchor_right = 0.7
 anchor_bottom = 0.95
 alignment = 1
+script = ExtResource( 1 )

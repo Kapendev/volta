@@ -4,13 +4,13 @@ enum StartMenu {NEW, CONTINUE, OPTIONS, EXIT}
 
 func _ready() -> void:
 	Persistent.empty()
-	var err := UI.connect("menu_pressed", self, "_on_menu_pressed")
+	var err := UI.menu.connect("deactivated", self, "_on_menu_deactivated")
 	if err:
-		Game.print_error(self, "UI.connect", err)
+		Game.print_error(self, "UI.menu.connect", err)
 	else:
-		UI.show_menu(["New Game", "Continue", "Options", "Exit"], BoxContainer.ALIGN_END)
+		UI.menu.activate(["New Game", "Continue", "Options", "Exit"], BoxContainer.ALIGN_END)
 
-func _on_menu_pressed(index: int) -> void:
+func _on_menu_deactivated(index: int) -> void:
 	match index:
 		StartMenu.NEW:
 			Game.change_scene("levels/TestLevel1")
@@ -20,4 +20,4 @@ func _on_menu_pressed(index: int) -> void:
 			Game.change_scene("levels/TestLevel1")
 		StartMenu.EXIT:
 			Game.change_scene("levels/TestLevel1")
-	UI.disconnect("menu_pressed", self, "_on_menu_pressed")
+	UI.menu.disconnect("deactivated", self, "_on_menu_deactivated")
