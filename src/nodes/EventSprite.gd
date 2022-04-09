@@ -15,19 +15,28 @@ func _ready() -> void:
 	event = get_parent()
 
 func _physics_process(delta: float) -> void:
-	if event.last_move_direction.normalized() == Vector2(-1,0).normalized():
-		current_animation = "walk_left"
-	elif event.last_move_direction.normalized() == Vector2(1, 0).normalized():
-		current_animation = "walk_right"
-	elif event.last_move_direction.normalized() == Vector2(0, -1).normalized():
-		current_animation = "walk_up"
-	elif event.last_move_direction.normalized() == Vector2(0, 1).normalized():
-		current_animation = "walk_down"
-#	elif event.last_move_direction.normalized() == Vector2(-1,-1).normalized():
-#		current_animation = "walk_upleft"
-#	elif event.last_move_direction.normalized() == Vector2(1, -1).normalized():
-#		current_animation = "walk_upright"
-#	elif event.last_move_direction.normalized() == Vector2(-1, -1).normalized():
-#		current_animation = "walk_downleft"
-#	elif event.last_move_direction.normalized() == Vector2(-1, 1).normalized():
-#		current_animation = "walk_downright"
+	var direction := event.last_move_direction.normalized()
+	if direction == Vector2.LEFT:
+		if current_animation != "walk_left":
+			set_current_animation("walk_left")
+	elif direction == Vector2.RIGHT:
+		if current_animation != "walk_right":
+			set_current_animation("walk_right")
+	elif direction == Vector2.UP:
+		if current_animation != "walk_up":
+			set_current_animation("walk_up")
+	elif direction == Vector2.DOWN:
+		if current_animation != "walk_down":
+			set_current_animation("walk_down")
+#	elif direction == Vector2.LEFT:
+#		if current_animation != "walk_up_left":
+#			set_current_animation("walk_left")
+#	elif direction == Vector2.RIGHT:
+#		if current_animation != "walk_up_right":
+#			set_current_animation("walk_right")
+#	elif direction == Vector2.UP:
+#		if current_animation != "walk_down_left":
+#			set_current_animation("walk_up")
+#	elif direction == Vector2.DOWN:
+#		if current_animation != "walk_down_right":
+#			set_current_animation("walk_down")

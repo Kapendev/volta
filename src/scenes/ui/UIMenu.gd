@@ -6,7 +6,7 @@ signal deactivated(index)
 const UIBUTTON_RES := preload("res://src/scenes/ui/UIButton.tscn")
 
 func _ready() -> void:
-	show()
+	hide()
 
 func activate(new_args: PoolStringArray, new_alignment := BoxContainer.ALIGN_CENTER) -> void:
 	show()
