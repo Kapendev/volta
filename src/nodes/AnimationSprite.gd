@@ -1,7 +1,7 @@
 class_name AnimationSprite
 extends Sprite
 
-export var is_playing := true setget set_is_playing
+export var is_playing := true
 export var frame_time := 0.2
 export var current_animation := "idle" setget set_current_animation
 export(String, FILE, "*.txt") var path := ""
@@ -23,31 +23,28 @@ func _process(delta: float) -> void:
 			next_index()
 			set_frame(animations[current_animation][index])
 
-func next_index() -> void:
-	index += 1
-	if index >= len(animations[current_animation]):
-		index = 0
+func reset() -> void:
+	index = 0
+	timer = 0.0
 
 func set_frame(value: int) -> void:
 	if value > -1 and value < vframes * hframes:
 		frame = value
 
-func set_is_playing(value: bool) -> void:
-	is_playing = value
-	index = 0
-	timer = 0.0
-	if current_animation in animations:
-		set_frame(animations[current_animation][index])
-
 func set_current_animation(value: String) -> void:
-	current_animation = value
-	index = 0
-	timer = 0.0
-	if current_animation in animations:
-		set_process(true)
-		set_frame(animations[current_animation][index])
-	else:
-		set_process(false)
+	if current_animation != value:
+		current_animation = value
+		reset()
+		if current_animation in animations:
+			set_process(true)
+			set_frame(animations[current_animation][index])
+		else:
+			set_process(false)
+
+func next_index() -> void:
+	index += 1
+	if index >= len(animations[current_animation]):
+		index = 0
 
 func load_animations() -> void:
 	var file := File.new()

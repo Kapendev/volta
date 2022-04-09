@@ -1,9 +1,9 @@
-idle_down,0
-idle_up,4
-idle_left,8
-idle_right,12
+idle_n,0
+idle_s,4
+idle_w,8
+idle_e,12
 
-walk_down,0,1,2,3
-walk_up,4,5,6,7
-walk_left,8,9,10,11
-walk_right,12,13,14,15
+walk_n,0,1,2,3
+walk_s,4,5,6,7
+walk_w,8,9,10,11
+walk_e,12,13,14,15
