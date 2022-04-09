@@ -20,31 +20,22 @@ func _process(delta: float) -> void:
 		timer += delta
 		if timer >= frame_time:
 			timer = 0.0
-			next_index()
-			set_frame(animations[current_animation][index])
+			next_frame()
 
-func reset() -> void:
-	index = 0
-	timer = 0.0
-
-func set_frame(value: int) -> void:
-	if value > -1 and value < vframes * hframes:
-		frame = value
+func next_frame() -> void:
+	if current_animation in animations:
+		index += 1
+		if index >= len(animations[current_animation]):
+			index = 0
+		if animations[current_animation][index] >= 0 and animations[current_animation][index] < vframes * hframes:
+			frame = animations[current_animation][index]
 
 func set_current_animation(value: String) -> void:
-	if current_animation != value:
+	if value != current_animation and value in animations:
 		current_animation = value
-		reset()
-		if current_animation in animations:
-			set_process(true)
-			set_frame(animations[current_animation][index])
-		else:
-			set_process(false)
-
-func next_index() -> void:
-	index += 1
-	if index >= len(animations[current_animation]):
-		index = 0
+		if index >= len(animations[current_animation]):
+			index = 0
+		frame = animations[current_animation][index]
 
 func load_animations() -> void:
 	var file := File.new()
@@ -65,5 +56,6 @@ func load_animations() -> void:
 					animations[key] = [] # PoolIntArray not working?
 				else:
 					animations[key].append(int(value))
-		set_current_animation(current_animation)
+			if not animations[key]:
+				animations.erase(key)
 		file.close()

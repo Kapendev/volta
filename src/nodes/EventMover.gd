@@ -33,9 +33,10 @@ func _physics_process(delta: float) -> void:
 				next_position()
 		else:
 			event.move(positions[current_position] - event.position)
-			if event.get_position().distance_to(positions[current_position]) < event.current_move_speed * delta:
+			if event.get_position().distance_to(positions[current_position]) < (event.current_move_speed * delta) / 2:
 				is_waiting = true
 				event.set_position(positions[current_position])
+				event.move(Vector2.ZERO)
 
 func next_position() -> void:
 	if is_going_back:

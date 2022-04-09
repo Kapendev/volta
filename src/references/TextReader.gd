@@ -1,23 +1,23 @@
-extends Node
+extends Reference
 
 const ESCAPE_CHAR := '\\'
 const LANGUAGE_CHAR := '@'
 
-func has_escape_char(line: String) -> bool:
+static func has_escape_char(line: String) -> bool:
 	return line[len(line)-1] == ESCAPE_CHAR
 
-func is_language_line(line: String) -> bool:
+static func is_language_line(line: String) -> bool:
 	return line[0] == LANGUAGE_CHAR
 
-func is_current_language_line(line: String) -> bool:
+static func is_current_language_line(line: String) -> bool:
 	return is_language_line(line) and line.ends_with(Game.current_language)
 
-func read(path: String) -> PoolStringArray:
+static func read(path: String) -> PoolStringArray:
 	var result := PoolStringArray()
 	var file := File.new()
 	var err := file.open(path, File.READ)
 	if err:
-		Game.print_error(self, "file.open", err)
+		printerr("TextReader: file.open -> error = " + str(err))
 		return result
 	
 	var can_append := false

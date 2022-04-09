@@ -71,7 +71,6 @@ config/icon="res://icon.png"
 Persistent="*res://src/singletons/Persistent.gd"
 Game="*res://src/singletons/Game.gd"
 UI="*res://src/singletons/UI.gd"
-TextReader="*res://src/singletons/TextReader.gd"
 
 [display]
 

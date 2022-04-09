@@ -4,19 +4,20 @@ extends AnimationSprite
 # TESTING TESTING TESTING TESTING
 
 enum Compass { E, NE, N, NW, W, SW, S, SE }
+
 var event: Event
 
 func _ready() -> void:
 	event = get_parent()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var animation_name: String
 	if event.is_moving:
 		animation_name = "move_"
 	else:
 		animation_name = "idle_"
 	
-	var direction := int(round((event.last_move_direction.angle() / (2 * PI / 8) + 8))) % 8
+	var direction := int(round((event.last_move_direction.angle() / (PI / 4) + 8))) % 8
 	match direction:
 		Compass.E:
 			animation_name += "e"
