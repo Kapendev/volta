@@ -1,8 +1,6 @@
 class_name AnimationSprite
 extends Sprite
 
-const READER = preload("res://src/references/AnimationReader.gd")
-
 export var is_playing := true
 export var frame_time := 0.2
 export var current_animation := "" setget set_current_animation
@@ -13,7 +11,7 @@ var timer := 0.0
 var animations := {} # String: [int]
 
 func _ready() -> void:
-	animations = READER.read(path)
+	animations = AnimationReader.read(path)
 	set_current_animation(current_animation)
 
 func _process(delta: float) -> void:

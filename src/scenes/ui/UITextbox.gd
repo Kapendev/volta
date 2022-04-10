@@ -53,4 +53,4 @@ func deactivate() -> void:
 func append_textbox(text: String) -> void:
 	var err := label.append_bbcode(text)
 	if err:
-		Game.print_error(self, "label.append_bbcode", err)
+		printerr("RichTextLabel.append_bbcode")

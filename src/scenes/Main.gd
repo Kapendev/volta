@@ -1,12 +1,14 @@
 extends Control
 
-enum StartMenu {NEW, CONTINUE, OPTIONS, EXIT}
+enum StartMenu {
+	NEW, CONTINUE, OPTIONS, EXIT,
+}
 
 func _ready() -> void:
 	Persistent.empty()
 	var err := UI.menu.connect("deactivated", self, "_on_menu_deactivated")
 	if err:
-		Game.print_error(self, "UI.menu.connect", err)
+		Error.echo(name, "UI.menu.connect", err)
 	else:
 		UI.menu.activate(["New Game", "Continue", "Options", "Exit"], BoxContainer.ALIGN_END)
 

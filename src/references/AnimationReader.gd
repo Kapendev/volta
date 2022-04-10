@@ -1,11 +1,12 @@
-extends Node
+class_name AnimationReader
+extends Reference
 
 static func read(path: String) -> Dictionary:
 	var result = {}
 	var file := File.new()
 	var err := file.open(path, File.READ)
 	if err:
-		printerr("AnimationReader: file.open -> error = " + str(err))
+		Error.echo("AnimationReader", "file.open", err)
 	else:
 		var key := ""
 		var line := ""

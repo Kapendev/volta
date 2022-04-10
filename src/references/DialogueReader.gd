@@ -1,3 +1,4 @@
+class_name DialogueReader
 extends Reference
 
 const ESCAPE_CHAR := '\\'
@@ -17,7 +18,7 @@ static func read(path: String) -> PoolStringArray:
 	var file := File.new()
 	var err := file.open(path, File.READ)
 	if err:
-		printerr("TextReader: file.open -> error = " + str(err))
+		Error.echo("DialogueReader", "file.open", err)
 	else:
 		var can_append := false
 		var line := ""

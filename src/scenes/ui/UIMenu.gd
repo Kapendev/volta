@@ -14,14 +14,14 @@ func activate(new_args: PoolStringArray, new_alignment := BoxContainer.ALIGN_CEN
 		var button := UIBUTTON_RES.instance()
 		var err := button.connect("pressed", self, "deactivate", [i])
 		if err:
-			Game.print_error(self, "button.connect", err)
+			printerr("Error: Button.connect")
 		else:
 			button.set_text(new_args[i])
 			add_child(button)
-			alignment = new_alignment
 			if i == 0:
 				button.grab_focus()
-		emit_signal("activated")
+			alignment = new_alignment
+			emit_signal("activated")
 
 func deactivate(index: int) -> void:
 	for node in get_children():

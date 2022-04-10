@@ -1,8 +1,8 @@
 class_name EventMover
 extends Node
 
-signal arrived
-signal returned
+signal arrived()
+signal returned()
 
 export var is_moving := true
 export var is_one_shot := false
@@ -33,7 +33,7 @@ func _physics_process(delta: float) -> void:
 				next_position()
 		else:
 			event.move(positions[current_position] - event.position)
-			if event.get_position().distance_to(positions[current_position]) < (event.current_move_speed * delta) / 2:
+			if event.get_position().distance_to(positions[current_position]) < (event.current_move_speed * delta) / 2.0:
 				is_waiting = true
 				event.set_position(positions[current_position])
 				event.move(Vector2.ZERO)
