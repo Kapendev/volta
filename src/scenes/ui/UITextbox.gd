@@ -53,4 +53,4 @@ func deactivate() -> void:
 func append_textbox(text: String) -> void:
 	var err := label.append_bbcode(text)
 	if err:
-		printerr("RichTextLabel.append_bbcode")
+		Error.echo(name, "label.append_bbcode", err)

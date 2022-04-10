@@ -14,7 +14,7 @@ func activate(new_args: PoolStringArray, new_alignment := BoxContainer.ALIGN_CEN
 		var button := UIBUTTON_RES.instance()
 		var err := button.connect("pressed", self, "deactivate", [i])
 		if err:
-			printerr("Error: Button.connect")
+			Error.echo(name, "button.connect", err)
 		else:
 			button.set_text(new_args[i])
 			add_child(button)
