@@ -18,31 +18,30 @@ static func read(path: String) -> PoolStringArray:
 	var err := file.open(path, File.READ)
 	if err:
 		printerr("TextReader: file.open -> error = " + str(err))
-		return result
-	
-	var can_append := false
-	var line := ""
-	var append_line := ""
-	while not file.eof_reached():
-		line = file.get_line()
-		if line.empty():
-			continue
-		if not can_append and is_language_line(line):
-			can_append = is_current_language_line(line)
-			continue
-		
-		if can_append:
-			if append_line.empty():
-				append_line = line
-			else:
-				append_line += line
+	else:
+		var can_append := false
+		var line := ""
+		var append_line := ""
+		while not file.eof_reached():
+			line = file.get_line()
+			if line.empty():
+				continue
+			if not can_append and is_language_line(line):
+				can_append = is_current_language_line(line)
+				continue
 			
-			if is_language_line(append_line):
-				break
-			if has_escape_char(append_line):
-				append_line.erase(len(append_line) - 1, 1)
-			else:
-				result.append(append_line)
-				append_line = ""
-	file.close()
+			if can_append:
+				if append_line.empty():
+					append_line = line
+				else:
+					append_line += line
+				
+				if is_language_line(append_line):
+					break
+				if has_escape_char(append_line):
+					append_line.erase(len(append_line) - 1, 1)
+				else:
+					result.append(append_line)
+					append_line = ""
+		file.close()
 	return result

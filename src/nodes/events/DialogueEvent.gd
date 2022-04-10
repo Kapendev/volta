@@ -1,7 +1,8 @@
 class_name DialogueEvent
 extends Event
 
-const text_reader = preload("res://src/references/TextReader.gd")
+const READER = preload("res://src/references/DialogueReader.gd")
+
 export(String, FILE, "*.txt") var path := ""
 
 func _ready() -> void:
@@ -13,7 +14,7 @@ func _on_textbox_deactivated() -> void:
 	Game.unpause()
 
 func react(_body: KinematicBody2D) -> void:
-	var data := text_reader.read(path)
+	var data := READER.read(path)
 	if data:
 		UI.textbox.activate(data)
 		Game.pause()
