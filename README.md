@@ -11,4 +11,27 @@ Godot version: 3.4.3
 
 ![pic2](https://raw.githubusercontent.com/AlexandrosKap/volta-pictures/main/pic2.png)
 
-Comment: Nothing is stable lol.
+## Game Structure
+
+### Singletons
+
+* Game
+
+  (NOT DONE) Language and help functions.
+
+* UI
+
+  (NOT DONE) The basic UI elements.
+  Includes a menu and a textbox.
+
+* Persistent
+
+  (NOT DONE) Stores nodes that wiil
+  not be deleted in a scene change call.
+
+### Nodes
+
+* Event
+
+  (NOT DONE) The base scene object for
+  implementing interactions in a scene.
