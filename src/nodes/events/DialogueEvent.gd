@@ -14,5 +14,5 @@ func _on_textbox_deactivated() -> void:
 func react(_body: KinematicBody2D) -> void:
 	var data := DialogueReader.read(path)
 	if data:
-		UI.textbox.activate(data)
 		Game.pause()
+		UI.textbox.activate(data)
