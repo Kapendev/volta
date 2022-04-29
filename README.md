@@ -18,7 +18,7 @@ Godot version: 3.4.3
   Change the structure of Event objects.
   Functionality based on components and not on inheritance.
 
-* Parser Singleton:
+* Dhall:
 
-  Parsers should be unique objects because they don't hold mutable data.
-  Creating a parser object for every Event object in the scene is a waste of time.
+  Use the Dhall language to create json files.
+  Maybe make a Dhall parser? Maybe lol.

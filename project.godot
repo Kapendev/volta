@@ -25,11 +25,6 @@ _global_script_classes=[ {
 "path": "res://src/nodes/events/DialogueEvent.gd"
 }, {
 "base": "Reference",
-"class": "DialogueParser",
-"language": "GDScript",
-"path": "res://src/references/DialogueParser.gd"
-}, {
-"base": "Reference",
 "class": "DialogueReader",
 "language": "GDScript",
 "path": "res://src/references/DialogueReader.gd"
@@ -73,7 +68,6 @@ _global_script_class_icons={
 "AnimationReader": "",
 "AnimationSprite": "",
 "DialogueEvent": "",
-"DialogueParser": "",
 "DialogueReader": "",
 "Error": "",
 "Event": "",

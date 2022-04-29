@@ -7,8 +7,6 @@ var canvas := CanvasLayer.new()
 var menu: VBoxContainer = UIMENU_RES.instance()
 var textbox: VBoxContainer = UITEXTBOX_RES.instance()
 
-var dialogue_parser = DialogueParser.new()
-
 func _ready() -> void:
 	set_pause_mode(Node.PAUSE_MODE_PROCESS)
 	add_child(canvas)
