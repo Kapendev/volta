@@ -4,7 +4,7 @@
 [ext_resource path="res://src/nodes/events/SceneEvent.gd" type="Script" id=2]
 [ext_resource path="res://src/nodes/events/PlayerEvent.gd" type="Script" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
-[ext_resource path="res://src/nodes/EventSprite.gd" type="Script" id=5]
+[ext_resource path="res://src/nodes/AnimationSprite.gd" type="Script" id=5]
 [ext_resource path="res://assets/sprites/isaiah658_pixelpack2/actors/actor2.png" type="Texture" id=6]
 [ext_resource path="res://src/nodes/events/Event.gd" type="Script" id=7]
 [ext_resource path="res://assets/sprites/isaiah658_pixelpack2/actors/actor3.png" type="Texture" id=8]
@@ -25,13 +25,13 @@ __meta__ = {
 position = Vector2( 499, 72 )
 script = ExtResource( 3 )
 
-[node name="EventSprite" type="Sprite" parent="PlayerEvent"]
+[node name="AnimationSprite" type="Sprite" parent="PlayerEvent"]
 scale = Vector2( 3, 3 )
 texture = ExtResource( 6 )
 hframes = 4
 vframes = 4
 script = ExtResource( 5 )
-current_animation = "walk_down"
+animation = "walk_n"
 path = "res://configurations/animations/actor.dhall.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerEvent"]
@@ -90,7 +90,7 @@ texture = ExtResource( 8 )
 hframes = 4
 vframes = 4
 script = ExtResource( 5 )
-current_animation = "walk_down"
+animation = "walk_n"
 path = "res://configurations/animations/actor.dhall.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event"]

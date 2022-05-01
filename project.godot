@@ -34,11 +34,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/nodes/EventMover.gd"
 }, {
-"base": "AnimationSprite",
-"class": "EventSprite",
-"language": "GDScript",
-"path": "res://src/nodes/EventSprite.gd"
-}, {
 "base": "Event",
 "class": "PlayerEvent",
 "language": "GDScript",
@@ -60,7 +55,6 @@ _global_script_class_icons={
 "Error": "",
 "Event": "",
 "EventMover": "",
-"EventSprite": "",
 "PlayerEvent": "",
 "SceneEvent": "",
 "TeleportEvent": ""
