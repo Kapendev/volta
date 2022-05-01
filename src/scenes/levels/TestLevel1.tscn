@@ -32,7 +32,7 @@ hframes = 4
 vframes = 4
 script = ExtResource( 5 )
 current_animation = "walk_down"
-path = "res://txt/animations/actor_anim.txt"
+path = "res://configurations/animations/actor.dhall.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerEvent"]
 shape = SubResource( 3 )
@@ -41,7 +41,7 @@ shape = SubResource( 3 )
 modulate = Color( 1, 0.462745, 0.462745, 1 )
 position = Vector2( 145, 185 )
 script = ExtResource( 1 )
-path = "res://txt/dialogues/hello.txt"
+path = "res://configurations/dialogues/hello.dhall.json"
 
 [node name="Sprite" type="Sprite" parent="TextEvent"]
 texture = ExtResource( 4 )
@@ -53,7 +53,7 @@ shape = SubResource( 1 )
 modulate = Color( 0.705882, 0.941176, 0.588235, 1 )
 position = Vector2( 145, 72 )
 script = ExtResource( 1 )
-path = "res://txt/dialogues/bob.txt"
+path = "res://configurations/dialogues/bob.dhall.json"
 
 [node name="Sprite" type="Sprite" parent="TextEvent2"]
 texture = ExtResource( 4 )
@@ -91,7 +91,7 @@ hframes = 4
 vframes = 4
 script = ExtResource( 5 )
 current_animation = "walk_down"
-path = "res://txt/animations/actor_anim.txt"
+path = "res://configurations/animations/actor.dhall.json"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Event"]
 shape = SubResource( 3 )

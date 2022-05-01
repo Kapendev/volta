@@ -4,15 +4,24 @@ extends Sprite
 export var is_playing := true
 export var frame_time := 0.2
 export var current_animation := "" setget set_current_animation
-export(String, FILE, "*.txt") var path := ""
+export(String, FILE, "*.json") var path := ""
 
 var index := 0
 var timer := 0.0
 var animations := {} # String: [int]
 
 func _ready() -> void:
-	animations = AnimationReader.read(path)
-	set_current_animation(current_animation)
+	var file := File.new()
+	var err := file.open(path, File.READ)
+	if err:
+		Error.echo(name, "file.open", err)
+	else:
+		# A hacked thing to test a json file.
+		var json := JSON.parse(file.get_as_text())
+		for i in json.result:
+			animations[i] = json.result[i]["frames"]
+		file.close()
+		set_current_animation(current_animation)
 
 func _process(delta: float) -> void:
 	if is_playing:
