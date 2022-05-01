@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
-"class": "AnimationReader",
-"language": "GDScript",
-"path": "res://src/references/AnimationReader.gd"
-}, {
 "base": "Sprite",
 "class": "AnimationSprite",
 "language": "GDScript",
@@ -23,11 +18,6 @@ _global_script_classes=[ {
 "class": "DialogueEvent",
 "language": "GDScript",
 "path": "res://src/nodes/events/DialogueEvent.gd"
-}, {
-"base": "Reference",
-"class": "DialogueReader",
-"language": "GDScript",
-"path": "res://src/references/DialogueReader.gd"
 }, {
 "base": "Reference",
 "class": "Error",
@@ -65,10 +55,8 @@ _global_script_classes=[ {
 "path": "res://src/nodes/events/TeleportEvent.gd"
 } ]
 _global_script_class_icons={
-"AnimationReader": "",
 "AnimationSprite": "",
 "DialogueEvent": "",
-"DialogueReader": "",
 "Error": "",
 "Event": "",
 "EventMover": "",

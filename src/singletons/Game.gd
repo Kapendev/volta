@@ -2,7 +2,7 @@ extends Node
 
 const SCENE_DIR := "res://src/scenes/"
 const LANGUAGES := PoolStringArray([
-	"en", "gr"
+	"En", "Gr"
 ])
 
 var current_language := LANGUAGES[0]

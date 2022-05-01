@@ -1,15 +1,15 @@
 let say = (../dialogue.dhall).say
 
-in  {en =
-        [
-        say "The name of this node is..."
-        #say "Bob."
-        #say "The end."
-        ]
-    ,gr =
-        [
-        say "Το όνομα αυτού του κόμβου είναι..."
-        #say "Μπόμπ."
-        #say "Τέλος."
-        ]
+let en0 =
+    say "[shake]The name of this node is..."
+    # say "[wave]Bob."
+    # say "[rainbow]The end."
+
+let gr0 =
+    say "[shake]Το όνομα αυτού του κόμβου είναι..."
+    # say "[wave]Μπόμπ."
+    # say "[rainbow]Τέλος."
+
+in  { En = [ en0 ]
+    , Gr = [ gr0 ]
     }

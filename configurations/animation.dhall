@@ -1,12 +1,12 @@
 let Animation =
-    {time : Double
-    ,frames : List Natural
+    { time : Double
+    , frames : List Natural
     }
 
-let animation : Double -> List Natural -> Animation =
+let animation =
     \(time : Double) -> \(frames : List Natural) ->
         { time, frames }
 
-in  {animation
-    ,Animation
+in  { animation
+    , Animation
     }
